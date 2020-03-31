@@ -11,39 +11,37 @@
  6. When the cat reaches the middle of the screen, replace the img with an image of a cat dancing(use this URL: https: //tenor.com/StFI.gif), keep it dancing for 5 seconds, and then replace the img with the original image and have it continue the walk.
  
 */
-
+// Selecting the cat
 const cat = document.querySelector('img');
-let currentPosition = -cat.width;
 // Making the initial position -minus the dimension of the cat, so that it walks from behind the screen
-// cat.style.left = currentPosition + 'px';
+let currentPosition = -cat.width;
 
 function catWalk() {
   newPosition = currentPosition + 10;
   cat.style.left = newPosition + 'px';
+  // Selecting a point that will be used to determine the position of the cat on the screen
   currentLeftSidePosition = parseInt(cat.style.left);
-  // console.log(currentLeftSidePosition);
-
+  // The first condition is for the cat outside the window
   if (currentLeftSidePosition > window.innerWidth) {
     currentPosition = -cat.width;
   } else if (
-    currentLeftSidePosition < window.innerWidth / 2 + cat.width / 2 &&
+    //The second condition when the cat is approximately in the middle
+    currentLeftSidePosition < window.innerWidth / 2 - cat.width / 2 + 5 &&
     currentLeftSidePosition > window.innerWidth / 2 - cat.width / 2
   ) {
-    currentLeftSidePosition = window.innerWidth / 2 - cat.width / 2;
     cat.src = 'https://media1.tenor.com/images/2de63e950fb254920054f9bd081e8157/tenor.gif';
-    cat.style.left = window.innerWidth / 2 - cat.width / 2 + 'px';
-    console.log(currentLeftSidePosition);
-    currentPosition = currentLeftSidePosition; //This Part
+
+    currentPosition = currentLeftSidePosition;
 
     window.setTimeout(function() {
       cat.src = 'http://www.anniemation.com/clip_art/images/cat-walk.gif';
-      currentPosition = newPosition;
-    }, 5000); //and This Part
+    }, 5000);
   } else {
-    currentPosition = newPosition;
+    // Putting a condition so the image does not move if it is still the dancing cat
+    if (cat.src === 'http://www.anniemation.com/clip_art/images/cat-walk.gif') {
+      currentPosition = newPosition;
+    }
   }
-
-  // console.log(cat);
 }
 
 setInterval(catWalk, 50);
