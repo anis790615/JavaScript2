@@ -1,1 +1,47 @@
-<!-- Your code goes in here -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
+      integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="index.css" />
+    <title>Quote Generator</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box">
+        <blockquote class="quote-block">
+          <p>
+            <span class="quote-sign"><i class="fas fa-quote-left"></i></span
+            ><span class="quote-text" id="quote-text"></span>
+          </p>
+          <footer class="quote-author" id="quote-author"></footer>
+        </blockquote>
+        <div class="links-buttons">
+          <div class="social">
+            <a href="#" id="twitter-share" class="social-links"
+              ><i class="fab fa-twitter-square"></i
+            ></a>
+            <a href="#" id="facebook-share" class="social-links"
+              ><i class="fab fa-facebook-square"></i
+            ></a>
+          </div>
+          <button class="btn" type="button" id="quote-button">New Quote</button>
+        </div>
+      </div>
+      <div class="call-to-action">
+        <p>Press the Button for a New Quote</p>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
