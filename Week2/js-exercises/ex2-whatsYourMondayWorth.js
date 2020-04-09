@@ -11,12 +11,14 @@
 
  */
 
-
 function dayWorth(tasks, hourlyRate) {
-  // put your code in here, the function does returns a euro formatted string
+  return `The total: €${tasks
+    .map((task) => (task.duration / 60) * hourlyRate)
+    .reduce((total, currentValue) => total + currentValue, 0)}`;
 }
 
-const mondayTasks = [{
+const mondayTasks = [
+  {
     name: 'Daily standup',
     duration: 30, // specified in minutes
   },
@@ -34,5 +36,5 @@ const mondayTasks = [{
   },
 ];
 
-console.log(dayWorth(mondayTasks, 25))
-console.log(dayWorth(mondayTasks, 13.37))
+console.log(dayWorth(mondayTasks, 25));
+console.log(dayWorth(mondayTasks, 13.37));
