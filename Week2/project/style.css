@@ -5,7 +5,52 @@
 }
 body {
   font-family: 'Righteous', cursive;
-  /* font-family: 'Orbitron', sans-serif; */
+
   background: #1f555d;
   color: #ffffff;
+}
+a {
+  color: #ffffff;
+}
+.container {
+  max-width: 70%;
+  margin: 5rem auto;
+  text-align: center;
+}
+.app-title {
+  font-size: 2.5rem;
+  padding: 0.5rem;
+}
+.timer-setter {
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+.timer-title {
+  font-size: 1.5rem;
+  padding: 0.5rem;
+}
+.length-display {
+  padding: 0 1rem;
+}
+.timer-display {
+  font-size: 1.5rem;
+  padding: 1rem;
+  border: 7px solid #14353b;
+  border-radius: 35px;
+  width: 40%;
+  margin: 0 auto;
+}
+#countdown-timer {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.2rem;
+}
+.digits {
+  padding: 0 0.5rem;
+}
+.timer-control {
+  padding: 1rem;
+  font-size: 1.5rem;
+}
+.control {
+  padding: 0 0.8rem;
 }

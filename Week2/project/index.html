@@ -20,22 +20,22 @@
   <body>
     <div class="container">
       <div id="app">
-        <h2>Pomodoro Clock</h2>
-        <h3>Session Length</h3>
+        <p class="app-title">Pomodoro Clock</p>
         <div class="timer-setter">
-          <p id="session-length">
-            <i class="fas fa-arrow-down"></i>25<i class="fas fa-arrow-up"></i>
-          </p>
+          <p class="timer-title">Session Length</p>
+          <a href="#" class="length-down fa-xs"><i class="fas fa-arrow-down"></i></a
+          ><span class="length-display">25</span
+          ><a href="#" class="length-up"><i class="fas fa-arrow-up fa-xs"></i></a>
         </div>
         <div class="timer-display">
-          <h3>Session</h3>
+          <p class="display-title">Session</p>
           <div id="countdown-timer">
-            <span class="minutes">25</span>:<span class="seconds">00</span>
+            <span class="digits minutes">25</span>:<span class="seconds digits">00</span>
           </div>
         </div>
         <div class="timer-control">
-          <a href="#" class="start-stop"><i class="fas fa-play"></i></a>
-          <a href="#" class="pause-resume"><i class="fas fa-pause"></i></a>
+          <a href="#" class="control start-stop"><i class="fas fa-play"></i></a>
+          <a href="#" class="control pause-resume"><i class="fas fa-pause"></i></a>
         </div>
       </div>
     </div>
