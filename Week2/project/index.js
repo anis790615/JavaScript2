@@ -99,7 +99,7 @@ function updateDisplay() {
     ? (displaySeconds.innerText = `0${seconds % 60}`)
     : (displaySeconds.innerText = `${seconds % 60}`);
 }
-
+//  Event listeners
 startTimer.addEventListener('click', start);
 stopTimer.addEventListener('click', stop);
 pauseTimer.addEventListener('click', pauseToggle);

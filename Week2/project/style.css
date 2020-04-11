@@ -1,3 +1,6 @@
+:root {
+  font-size: 16px;
+}
 * {
   margin: 0;
   padding: 0;
@@ -34,10 +37,10 @@ a {
 }
 .timer-display {
   font-size: 1.5rem;
-  padding: 1rem;
+  padding: 1.3rem;
   border: 7px solid #14353b;
   border-radius: 35px;
-  width: 40%;
+  width: 50%;
   margin: 0 auto;
 }
 #countdown-timer {
@@ -62,4 +65,15 @@ a {
 .stopped {
   display: none;
   padding: 0;
+}
+
+@media (max-width: 760px) {
+  :root {
+    font-size: 12px;
+  }
+}
+@media (max-width: 450px) {
+  :root {
+    font-size: 8px;
+  }
 }
