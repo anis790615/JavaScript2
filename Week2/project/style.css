@@ -50,7 +50,16 @@ a {
 .timer-control {
   padding: 1rem;
   font-size: 1.5rem;
+  position: relative;
 }
 .control {
   padding: 0 0.8rem;
+}
+.playing {
+  display: inline-block;
+  padding: 1rem;
+}
+.stopped {
+  display: none;
+  padding: 0;
 }
