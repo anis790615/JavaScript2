@@ -5,6 +5,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  user-select: none;
 }
 body {
   font-family: 'Righteous', cursive;
@@ -19,6 +20,9 @@ a {
   max-width: 70%;
   margin: 5rem auto;
   text-align: center;
+}
+.hidden {
+  display: none;
 }
 .app-title {
   font-size: 2.5rem;
@@ -42,6 +46,9 @@ a {
   border-radius: 35px;
   width: 50%;
   margin: 0 auto;
+}
+.message {
+  font-size: 2.2rem;
 }
 #countdown-timer {
   font-family: 'Orbitron', sans-serif;

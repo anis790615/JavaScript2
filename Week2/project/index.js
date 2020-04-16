@@ -21,6 +21,8 @@ const controls = document.querySelectorAll('.control');
 let setDurationDisplay = document.querySelector('.length-display');
 const displayMinutes = document.querySelector('.minutes');
 const displaySeconds = document.querySelector('.seconds');
+const message = document.querySelector('.message');
+const timerDisplay = document.querySelector('#countdown-timer');
 
 //Timer variables
 let setDurationValue = parseInt(setDurationDisplay.innerText);
@@ -30,15 +32,17 @@ let timerHandler = 0;
 let seconds = 1500;
 
 // Functions
-
+// The start function is listened on the start button and fires up the timer and switches controls
 function start() {
   timer();
   toggleControl();
 }
+// The start function is listened on the stop button and resets the timer and returns controls to initial state
 function stop() {
   resetTimer();
   toggleControl();
 }
+// Increment and Decrement functions check if timers is stopped and then change the session duration
 function incrementFunction() {
   if (timerStopped) {
     setDurationValue++;
@@ -51,10 +55,15 @@ function decrementFunction() {
     updateDisplay();
   }
 }
+// The timer function
 function timer() {
+  // Takes the value from the session duration and converts it to seconds
   seconds = setDurationValue * 60;
+  // assigns the interval function to variable so that it can be cleared
   timerHandler = setInterval(function() {
+    // Checks if seconds didn't reach 0 otherwise, fires up the timers message
     if (seconds !== 0) {
+      // Checks if timer is not paused so it starts decrementing
       if (!isPaused) {
         seconds--;
         updateDisplay();
@@ -62,10 +71,12 @@ function timer() {
         seconds = seconds;
       }
     } else {
-      resetTimer();
+      timeIsUp();
+      stop();
     }
   }, 1000);
 }
+// The function toggles between a single start button and a stop and pause buttons
 function toggleControl() {
   controls.forEach(function(control) {
     if (control.classList.contains('playing')) {
@@ -75,15 +86,17 @@ function toggleControl() {
     } else {
       control.classList.add('playing');
       control.classList.remove('stopped');
-      timerStopped = !timerStopped;
+      timerStopped = false;
     }
   });
 }
+// Clears the interval and resets the value of the timer to that of the session length
 function resetTimer() {
   seconds = setDurationValue * 60;
   clearInterval(timerHandler);
   updateDisplay();
 }
+// The pause toggle simple changes the icon of the play to pause and vice versa
 function pauseToggle() {
   isPaused = !isPaused;
   if (pausePlayIcon.classList.contains('fa-pause')) {
@@ -92,6 +105,7 @@ function pauseToggle() {
     pausePlayIcon.classList.replace('fa-play', 'fa-pause');
   }
 }
+// The function updates all values and outputs them to screen
 function updateDisplay() {
   setDurationDisplay.innerText = setDurationValue;
   displayMinutes.innerText = `${Math.floor(seconds / 60)}`;
@@ -99,6 +113,16 @@ function updateDisplay() {
     ? (displaySeconds.innerText = `0${seconds % 60}`)
     : (displaySeconds.innerText = `${seconds % 60}`);
 }
+// Hides the timer and shows the message, and after 5 seconds reverse that
+function timeIsUp() {
+  timerDisplay.classList.add('hidden');
+  message.classList.remove('hidden');
+  setTimeout(function() {
+    timerDisplay.classList.remove('hidden');
+    message.classList.add('hidden');
+  }, 5000);
+}
+
 //  Event listeners
 startTimer.addEventListener('click', start);
 stopTimer.addEventListener('click', stop);
