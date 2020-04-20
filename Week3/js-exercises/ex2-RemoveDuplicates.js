@@ -10,12 +10,31 @@ does not return anything but removes any duplicate elements from the array.
    
  */
 
-
 // WRITE YOUR FUNCTION HERE
+function removeDuplicates(arr) {
+  // arr = arr.filter((value, index) => arr.indexOf(value) === index);
+  // return arr;
+  arr.forEach((value, index) => {
+    // console.log(arr[index], value, arr.indexOf(value));
+    if (arr.indexOf(value) !== index) {
+      let i = arr.indexOf(value);
+      console.log(value, i);
+      removeElement(arr, index);
+      // arr.splice(i, 1);
+    }
+  });
+  return arr;
+}
 
-const letters = ['a', 'b', 'c', 'd', 'a', 'e', 'f', 'c', 'b'];
+let letters = ['a', 'b', 'b', 'c', 'd', 'a', 'e', 'f', 'f', 'c', 'b'];
+// letters = letters.filter((value, index) => letters.indexOf(value) === index);
 
-removeDuplicates(letter);
-
-if (letters === ['a', 'b', 'c', 'd', 'e', 'f'])
-  console.log("Hooray!")
+console.log(removeDuplicates(letters));
+// console.log(removeDuplicates(letters));
+// console.log(letters);
+if (letters === ['a', 'b', 'c', 'd', 'e', 'f']) {
+  console.log('Hooray!');
+}
+function removeElement(arr, index) {
+  arr.splice(index, 1);
+}
