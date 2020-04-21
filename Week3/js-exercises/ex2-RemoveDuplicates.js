@@ -16,13 +16,17 @@ function removeDuplicates(arr) {
   // return arr;
   arr.forEach((value, index) => {
     // console.log(arr[index], value, arr.indexOf(value));
-    if (arr.indexOf(value) !== index) {
-      let i = arr.indexOf(value);
-      console.log(value, i);
-      removeElement(arr, index);
+
+    if (arr.indexOf(value) === index) {
+      value = value;
+      // removeElement(arr, index);
       // arr.splice(i, 1);
+    } else {
+      arr.splice(index, 1);
+      // arr.splice(-1, 1);
     }
   });
+
   return arr;
 }
 
@@ -31,7 +35,7 @@ let letters = ['a', 'b', 'b', 'c', 'd', 'a', 'e', 'f', 'f', 'c', 'b'];
 
 console.log(removeDuplicates(letters));
 // console.log(removeDuplicates(letters));
-// console.log(letters);
+console.log(letters);
 if (letters === ['a', 'b', 'c', 'd', 'e', 'f']) {
   console.log('Hooray!');
 }

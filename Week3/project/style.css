@@ -1,0 +1,62 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: #431912;
+  font-family: 'Girassol', cursive;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#app {
+  height: 550px;
+  width: 400px;
+}
+.app-header {
+  background: #1f030b;
+  color: #ffffff;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 1.5rem;
+  border-radius: 10px 10px 0 0;
+}
+.calculator-form,
+.tip-amount {
+  background: #ffffff;
+  padding: 1rem;
+}
+.tip-amount {
+  height: 25%;
+}
+.form-item {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 0.5rem;
+  align-items: center;
+  line-height: 1.5rem;
+}
+.form-item > input,
+select {
+  background-color: white;
+  border: thin solid #431912;
+  outline-color: #431912;
+  border-radius: 4px;
+  font: inherit;
+  padding: 0.2rem 1rem 0.2rem 1rem;
+  width: 50%;
+}
+.form-item > label {
+  padding: 0.5rem 0;
+}
+.form-item .btn {
+  text-align: center;
+  background: #431912;
+  color: #ffffff;
+  margin-top: 2rem;
+}
+.tip-amount {
+  text-align: center;
+}
