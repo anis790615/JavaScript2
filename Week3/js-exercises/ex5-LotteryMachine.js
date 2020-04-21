@@ -28,10 +28,12 @@ Don't you just love the thrill of the lottery? What if I told you we can make ou
 
 function threeFive(startIndex, stopIndex, threeCallback, fiveCallback) {
   const numbers = [];
+  // Pushing the numbers between the start and stop indexes into the creatd array numbers
   while (startIndex <= stopIndex) {
     numbers.push(startIndex);
     startIndex++;
   }
+  // Iterating over the numbers array and running a function based on condition
   numbers.forEach(number => {
     if (number % 3 === 0 && number % 5 === 0) {
       threeCallback();
