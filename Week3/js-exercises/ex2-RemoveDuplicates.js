@@ -17,28 +17,22 @@ function removeDuplicates(arr) {
   arr.forEach((value, index) => {
     // console.log(arr[index], value, arr.indexOf(value));
 
-    if (arr.indexOf(value) === index) {
-      value = value;
+    if (arr.indexOf(value) !== index) {
+      console.log(value);
       // removeElement(arr, index);
-      // arr.splice(i, 1);
-    } else {
       arr.splice(index, 1);
-      // arr.splice(-1, 1);
     }
   });
-
-  return arr;
 }
 
-let letters = ['a', 'b', 'b', 'c', 'd', 'a', 'e', 'f', 'f', 'c', 'b'];
+const letters = ['a', 'b', 'b', 'c', 'd', 'a', 'e', 'f', 'f', 'c', 'b'];
 // letters = letters.filter((value, index) => letters.indexOf(value) === index);
 
 console.log(removeDuplicates(letters));
-// console.log(removeDuplicates(letters));
 console.log(letters);
 if (letters === ['a', 'b', 'c', 'd', 'e', 'f']) {
   console.log('Hooray!');
 }
-function removeElement(arr, index) {
-  arr.splice(index, 1);
-}
+// function removeElement(arr, index) {
+//   arr.splice(index, 1);
+// }
